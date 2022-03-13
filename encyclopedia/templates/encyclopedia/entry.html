@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{entry_title}}
+{% endblock %}
+
+{% block body %}
+
+    <div class="row text-start">
+        <div class="col-lg-6"> 
+            <!-- |safe prevent django from converting to string -->
+            {{entry_content|safe}} 
+        </div>
+    </div>
+    <div class="row text-start">
+        <div class="col-lg-6">
+            <div class="d-grid gap-2 d-md-block">
+                <a href="{% url 'wiki:index' %}" class="btn btn-primary btn-md mt-4" tabindex="-1" role="button" aria-disabled="true">Go back</a>
+                <a href="{% url 'wiki:edit' entry_title %}" class="btn btn-primary btn-md mt-4" tabindex="-1" role="button" aria-disabled="true">Edit</a>
+              </div>
+        </div>
+    </div>
+
+
+{% endblock %}

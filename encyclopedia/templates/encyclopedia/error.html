@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+<div class="row text-start">
+    <div class="col-lg-12">
+        <h1 class="error">{{message}}</h1>
+        <a href="{% url 'wiki:index' %}" class="btn btn-primary btn-lg mt-4" tabindex="-1" role="button" aria-disabled="true">Go back</a>
+    </div>
+</div>
+    
+{% endblock %}

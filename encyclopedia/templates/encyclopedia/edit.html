@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Editing {{entry_title}}
+{% endblock %}
+
+{% block body %}
+<h2>Editing {{entry_title}}</h2>
+<div class="row">
+    <div class="col-lg-6">
+        <form action="{% url 'wiki:index' %}edit/{{entry_title}}" method="POST">
+
+            <div class="form-group mb-3">
+                {% csrf_token %}
+                {{ editform }}
+            </div>
+
+            <div class="d-md-flex justify-content-md-end">
+                <input type="submit" class="btn btn-primary" value="Save changes">
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
